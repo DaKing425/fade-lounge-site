@@ -10,6 +10,7 @@
 import { useState } from "react";
 import { BOOKSY_URL } from "@/src/lib/site";
 import { trackEvent } from "@/src/lib/analytics";
+import { ui } from "@/src/lib/ui";
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -43,11 +44,11 @@ export default function GalleryPage() {
     : galleries;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className={ui.container + " py-12"}>
       <div className="space-y-8">
         <div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Gallery</h1>
-          <p className="text-slate-600 text-lg">
+          <h1 className={ui.h2 + " mb-4"}>Gallery</h1>
+          <p className={ui.pLarge}>
             See our work - real cuts from real Fade Lounge clients
           </p>
         </div>
@@ -79,7 +80,7 @@ export default function GalleryPage() {
           {filteredGalleries.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-lg overflow-hidden border border-slate-200 hover:border-[#3C4973] transition-all cursor-pointer group shadow-sm"
+              className={ui.card + " overflow-hidden hover:border-[#3C4973] transition-all cursor-pointer group"}
             >
               {/* Placeholder Image */}
               <div className="w-full h-64 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center group-hover:from-slate-300 group-hover:to-slate-400 transition-colors relative">
@@ -95,7 +96,7 @@ export default function GalleryPage() {
 
               {/* Caption */}
               <div className="p-4">
-                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <h3 className={ui.h4}>{item.title}</h3>
                 <p className="text-sm text-[#9A3A4B]">{item.category}</p>
               </div>
             </div>
@@ -105,13 +106,13 @@ export default function GalleryPage() {
         {/* Empty State */}
         {filteredGalleries.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-slate-600 text-lg">No images found in this category</p>
+            <p className={ui.pLarge}>No images found in this category</p>
           </div>
         )}
 
         {/* CTA Section */}
-        <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <div className={ui.card + " p-8 text-center"}>
+          <h2 className={ui.h3 + " mb-4"}>
             Ready to get your cut?
           </h2>
           <a
@@ -123,7 +124,7 @@ export default function GalleryPage() {
                 location: "gallery_page",
               });
             }}
-            className="inline-block bg-[#9A3A4B] hover:bg-[#7d2e3c] text-white font-semibold py-3 px-8 rounded transition-colors min-h-12 flex items-center justify-center"
+            className={ui.primaryBtn}
           >
             Book Now
           </a>

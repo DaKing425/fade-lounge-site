@@ -8,6 +8,7 @@
 
 import { BOOKSY_URL } from "@/src/lib/site";
 import { trackEvent } from "@/src/lib/analytics";
+import { ui } from "@/src/lib/ui";
 
 export default function TeamPage() {
   // Placeholder barber data - will be managed in CMS
@@ -33,11 +34,11 @@ export default function TeamPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className={ui.container + " py-12"}>
       <div className="space-y-12">
         <div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Our Barbers</h1>
-          <p className="text-slate-600 text-lg">
+          <h1 className={ui.h2 + " mb-4"}>Our Barbers</h1>
+          <p className={ui.pLarge}>
             Meet the talented team behind Fade Lounge
           </p>
         </div>
@@ -47,7 +48,7 @@ export default function TeamPage() {
           {barbers.map((barber) => (
             <div
               key={barber.id}
-              className="bg-white rounded-lg overflow-hidden border border-slate-200 hover:border-[#3C4973] transition-colors shadow-sm"
+              className={ui.card + " overflow-hidden hover:border-[#3C4973] transition-colors"}
               onClick={() => {
                 trackEvent("barber_profile_viewed", {
                   barber_name: barber.name,
@@ -63,20 +64,20 @@ export default function TeamPage() {
               </div>
 
               {/* Barber Info */}
-              <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-slate-900">{barber.name}</h3>
-                <p className="text-slate-600 text-sm">{barber.bio}</p>
+              <div className={ui.cardHeader}>
+                <h3 className={ui.h3}>{barber.name}</h3>
+                <p className={ui.pSmall}>{barber.bio}</p>
 
                 {/* Specialties */}
                 <div>
-                  <p className="text-sm font-semibold text-slate-700 mb-2">
+                  <p className={ui.pSmall + " font-semibold mb-2"}>
                     Specialties
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {barber.specialties.map((specialty, idx) => (
                       <span
                         key={idx}
-                        className="bg-[#F8FAFC] text-[#3C4973] text-xs px-3 py-1 rounded"
+                        className={ui.chip}
                       >
                         {specialty}
                       </span>
@@ -95,7 +96,7 @@ export default function TeamPage() {
                       barber_name: barber.name,
                     });
                   }}
-                  className="block w-full text-center bg-[#9A3A4B] hover:bg-[#7d2e3c] text-white font-semibold py-3 rounded transition-colors min-h-12 flex items-center justify-center"
+                  className={ui.primaryBtn + " w-full justify-center"}
                 >
                   Book with {barber.name}
                 </a>
@@ -105,8 +106,8 @@ export default function TeamPage() {
         </div>
 
         {/* Team Culture Section - Placeholder */}
-        <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+        <div className={ui.card + " p-8"}>
+          <h2 className={ui.h3 + " mb-4"}>
             Why Choose Fade Lounge?
           </h2>
           <ul className="space-y-3 text-slate-700">

@@ -1,21 +1,22 @@
 "use client";
 
 import { REVIEW_RATING, REVIEW_COUNT, BOOKSY_URL } from "@/src/lib/site";
+import { ui } from "@/src/lib/ui";
 
 export default function Home() {
   return (
     <div className="space-y-0">
       {/* Hero Section */}
       <section className="bg-white pt-16 pb-32 md:pt-32 md:pb-48">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={ui.container}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Hero Text */}
             <div className="space-y-8">
-              <h1 className="text-6xl md:text-7xl font-bold text-slate-900 leading-tight tracking-tight">
+              <h1 className={ui.h1}>
                 Premium Barbershop in{" "}
                 <span className="text-[#3C4973]">Snohomish, WA</span>
               </h1>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+              <p className={ui.pLarge}>
                 Expert fades, precision cuts, and premium beard services. Trusted by locals with a{" "}
                 <span className="font-semibold text-slate-900">
                   {REVIEW_RATING}★ rating ({REVIEW_COUNT}+ reviews)
@@ -34,13 +35,13 @@ export default function Home() {
                       });
                     }
                   }}
-                  className="inline-flex items-center justify-center h-13 px-10 bg-[#9A3A4B] text-white font-semibold rounded-lg hover:bg-[#7d2e3c] transition-colors duration-200"
+                  className={ui.primaryBtnLarge}
                 >
                   Book Now
                 </a>
                 <a
                   href="/services"
-                  className="inline-flex items-center justify-center h-13 px-10 border-2 border-[#3C4973] text-[#3C4973] font-semibold rounded-lg hover:border-[#9A3A4B] hover:text-[#9A3A4B] transition-colors duration-200"
+                  className={ui.secondaryBtnLarge}
                 >
                   View Services
                 </a>
@@ -49,10 +50,10 @@ export default function Home() {
 
             {/* Hero Image Placeholder */}
             <div className="hidden md:block">
-              <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg h-96 flex items-center justify-center border border-slate-200">
+              <div className="bg-white rounded-lg h-96 flex items-center justify-center border border-slate-200">
                 <div className="text-center">
                   <div className="text-8xl mb-4">✂️</div>
-                  <p className="text-slate-600 font-semibold">Premium Fade Lounge</p>
+                  <p className={ui.muted + " font-semibold"}>Premium Fade Lounge</p>
                 </div>
               </div>
             </div>
@@ -62,7 +63,7 @@ export default function Home() {
 
       {/* Reviews Strip */}
       <section className="bg-white border-y border-slate-200 py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={ui.container}>
           <div className="grid grid-cols-3 gap-8 text-center">
             <div className="space-y-2">
               <p className="text-slate-600 text-sm font-medium uppercase tracking-wide">Rating</p>
@@ -82,11 +83,11 @@ export default function Home() {
 
       {/* Services Preview */}
       <section className="bg-white pt-32 pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={ui.container}>
           <div className="space-y-12">
             <div className="space-y-3">
-              <h2 className="text-5xl font-bold text-slate-900">Popular Services</h2>
-              <p className="text-lg text-slate-600">Expert cuts, premium grooming, and custom styles</p>
+              <h2 className={ui.h2}>Popular Services</h2>
+              <p className={ui.pLarge}>Expert cuts, premium grooming, and custom styles</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -100,10 +101,10 @@ export default function Home() {
               ].map((service) => (
                 <div
                   key={service.name}
-                  className="bg-slate-50 border border-slate-200 rounded-lg p-8 hover:border-[#3C4973] transition-colors duration-200"
+                  className={ui.card + " p-8 hover:border-[#3C4973] transition-colors duration-200"}
                 >
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{service.name}</h3>
-                  <p className="text-slate-600 text-sm mb-6">{service.time}</p>
+                  <h3 className={ui.h4 + " mb-2"}>{service.name}</h3>
+                  <p className={ui.pSmall + " mb-6"}>{service.time}</p>
                   <p className="text-2xl font-bold text-[#9A3A4B]">{service.price}</p>
                 </div>
               ))}
@@ -112,7 +113,7 @@ export default function Home() {
             <div className="text-center pt-4">
               <a
                 href="/services"
-                className="inline-block text-[#3C4973] font-semibold hover:text-[#9A3A4B] transition-colors text-lg"
+                className={ui.link + " text-lg"}
               >
                 View All Services →
               </a>
@@ -122,18 +123,18 @@ export default function Home() {
       </section>
 
       {/* Gallery Preview */}
-      <section className="bg-slate-50 py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="bg-white py-32">
+        <div className={ui.container + " space-y-12"}>
           <div className="space-y-3">
-            <h2 className="text-5xl font-bold text-slate-900">Our Work</h2>
-            <p className="text-lg text-slate-600">Real cuts from real Fade Lounge clients</p>
+            <h2 className={ui.h2}>Our Work</h2>
+            <p className={ui.pLarge}>Real cuts from real Fade Lounge clients</p>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="bg-white border border-slate-200 rounded-lg aspect-square flex items-center justify-center hover:border-[#3C4973] transition-colors duration-200 cursor-pointer"
+                className={ui.card + " aspect-square flex items-center justify-center hover:border-[#3C4973] transition-colors duration-200 cursor-pointer"}
               >
                 <div className="text-5xl">📷</div>
               </div>
@@ -143,7 +144,7 @@ export default function Home() {
           <div className="text-center pt-4">
             <a
               href="/gallery"
-              className="inline-flex items-center justify-center h-13 px-10 bg-[#9A3A4B] hover:bg-[#7d2e3c] text-white font-semibold rounded-lg transition-colors duration-200"
+              className={ui.primaryBtnLarge}
             >
               View Full Gallery
             </a>
@@ -153,27 +154,27 @@ export default function Home() {
 
       {/* Team Preview */}
       <section className="bg-white pt-32 pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={ui.container}>
           <div className="space-y-12">
             <div className="space-y-3">
-              <h2 className="text-5xl font-bold text-slate-900">Meet Our Barbers</h2>
-              <p className="text-lg text-slate-600">Expert barbers dedicated to your style</p>
+              <h2 className={ui.h2}>Meet Our Barbers</h2>
+              <p className={ui.pLarge}>Expert barbers dedicated to your style</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {["Carlos", "Marco", "Jose"].map((name) => (
                 <div
                   key={name}
-                  className="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden hover:border-[#3C4973] transition-colors duration-200"
+                  className={ui.card + " overflow-hidden hover:border-[#3C4973] transition-colors duration-200"}
                 >
                   <div className="bg-gradient-to-br from-slate-200 to-slate-300 aspect-square flex items-center justify-center">
                     <div className="text-6xl font-bold text-slate-600">{name.charAt(0)}</div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{name}</h3>
+                    <h3 className={ui.h4 + " mb-3"}>{name}</h3>
                     <a
                       href="/team"
-                      className="text-[#3C4973] font-medium hover:text-[#9A3A4B] transition-colors text-sm"
+                      className={ui.linkSmall}
                     >
                       View Profile →
                     </a>
@@ -185,7 +186,7 @@ export default function Home() {
             <div className="text-center pt-4">
               <a
                 href="/team"
-                className="inline-block text-[#3C4973] font-semibold hover:text-[#9A3A4B] transition-colors text-lg"
+                className={ui.link + " text-lg"}
               >
                 Meet the Full Team →
               </a>
@@ -196,43 +197,43 @@ export default function Home() {
 
       {/* Location Block */}
       <section className="bg-white pt-32 pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={ui.container}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-3">
-                <h2 className="text-5xl font-bold text-slate-900">
+                <h2 className={ui.h2}>
                   Premium Barbershop in Snohomish, WA
                 </h2>
               </div>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className={ui.pLarge}>
                 Fade Lounge is your trusted barber in Snohomish, dedicated to precision cuts, expert beard services, and a welcoming atmosphere. Every client receives the same level of attention and care.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <span className="text-[#9A3A4B] font-bold text-2xl flex-shrink-0">✓</span>
-                  <p className="text-slate-700">Expert barbers with 15+ years experience</p>
+                  <p className={ui.p}>Expert barbers with 15+ years experience</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-[#9A3A4B] font-bold text-2xl flex-shrink-0">✓</span>
-                  <p className="text-slate-700">Premium tools and high-quality products</p>
+                  <p className={ui.p}>Premium tools and high-quality products</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-[#9A3A4B] font-bold text-2xl flex-shrink-0">✓</span>
-                  <p className="text-slate-700">Clean, professional environment</p>
+                  <p className={ui.p}>Clean, professional environment</p>
                 </div>
               </div>
               <a
                 href="/about"
-                className="inline-block text-[#3C4973] font-semibold hover:text-[#9A3A4B] transition-colors text-lg"
+                className={ui.link + " text-lg"}
               >
                 Learn More →
               </a>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg aspect-square flex items-center justify-center border border-slate-200">
+            <div className="bg-white rounded-lg aspect-square flex items-center justify-center border border-slate-200">
               <div className="text-center">
                 <div className="text-8xl mb-4">🏪</div>
-                <p className="text-slate-600 font-semibold">Fade Lounge Snohomish</p>
+                <p className={ui.muted + " font-semibold"}>Fade Lounge Snohomish</p>
               </div>
             </div>
           </div>

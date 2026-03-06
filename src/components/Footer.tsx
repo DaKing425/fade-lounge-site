@@ -10,6 +10,7 @@ import {
   HOURS,
 } from "../lib/site";
 import { trackEvent } from "../lib/analytics";
+import { ui } from "../lib/ui";
 
 /**
  * Footer Component
@@ -23,14 +24,14 @@ import { trackEvent } from "../lib/analytics";
 export function Footer() {
   return (
     <footer className="bg-white border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className={ui.container + " py-12"}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand & Contact Info */}
           <div className="space-y-4">
             <h3 className="text-[#3C4973] font-bold text-lg">{BUSINESS_NAME}</h3>
             <div className="space-y-3">
               <div>
-                <p className="text-sm font-semibold text-slate-600">Address</p>
+                <p className={ui.pSmall + " font-semibold"}>Address</p>
                 <a
                   href={GOOGLE_MAPS_URL}
                   target="_blank"
@@ -46,7 +47,7 @@ export function Footer() {
                 </a>
               </div>
               <div>
-                <p className="text-sm font-semibold text-slate-600">Phone</p>
+                <p className={ui.pSmall + " font-semibold"}>Phone</p>
                 <a
                   href={`tel:${PHONE.replace(/\s/g, "")}`}
                   onClick={() => {

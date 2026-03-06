@@ -8,23 +8,24 @@
 
 import { BOOKSY_URL } from "@/src/lib/site";
 import { trackEvent } from "@/src/lib/analytics";
+import { ui } from "@/src/lib/ui";
 
 export default function ServicesPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className={ui.container + " py-12"}>
       <div className="space-y-8">
         <div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Our Services</h1>
-          <p className="text-slate-600 text-lg">
+          <h1 className={ui.h2 + " mb-4"}>Our Services</h1>
+          <p className={ui.pLarge}>
             Premium barbershop services in Snohomish, WA
           </p>
         </div>
 
         {/* Services Grid - Placeholder */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Skin Fade</h3>
-            <p className="text-slate-600 text-sm mb-4">
+          <div className={ui.card + " p-6"}>
+            <h3 className={ui.h4 + " mb-2"}>Skin Fade</h3>
+            <p className={ui.pSmall + " mb-4"}>
               Classic skin fade with clean line work
             </p>
             <div className="flex justify-between items-center">
@@ -33,11 +34,11 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <div className={ui.card + " p-6"}>
+            <h3 className={ui.h4 + " mb-2"}>
               Classic/Gentleman Haircut
             </h3>
-            <p className="text-slate-600 text-sm mb-4">
+            <p className={ui.pSmall + " mb-4"}>
               Timeless cut with professional styling
             </p>
             <div className="flex justify-between items-center">
@@ -46,11 +47,11 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <div className={ui.card + " p-6"}>
+            <h3 className={ui.h4 + " mb-2"}>
               Kids Regular Haircut
             </h3>
-            <p className="text-slate-600 text-sm mb-4">
+            <p className={ui.pSmall + " mb-4"}>
               Friendly service for young clients
             </p>
             <div className="flex justify-between items-center">
@@ -59,11 +60,11 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <div className={ui.card + " p-6"}>
+            <h3 className={ui.h4 + " mb-2"}>
               Haircut & Beard
             </h3>
-            <p className="text-slate-600 text-sm mb-4">
+            <p className={ui.pSmall + " mb-4"}>
               Complete grooming package
             </p>
             <div className="flex justify-between items-center">
@@ -72,11 +73,11 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <div className={ui.card + " p-6"}>
+            <h3 className={ui.h4 + " mb-2"}>
               Beard Line Up/Shaping
             </h3>
-            <p className="text-slate-600 text-sm mb-4">
+            <p className={ui.pSmall + " mb-4"}>
               Precision beard grooming
             </p>
             <div className="flex justify-between items-center">
@@ -85,11 +86,11 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <div className={ui.card + " p-6"}>
+            <h3 className={ui.h4 + " mb-2"}>
               Haircut with Design
             </h3>
-            <p className="text-slate-600 text-sm mb-4">
+            <p className={ui.pSmall + " mb-4"}>
               Custom designs and patterns
             </p>
             <div className="flex justify-between items-center">
@@ -100,8 +101,8 @@ export default function ServicesPage() {
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-[#9A3A4B] to-[#7d2e3c] rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Ready to book?</h2>
+        <div className="bg-white rounded-lg p-8 border border-slate-200 text-center">
+          <h2 className={ui.h3 + " mb-4"}>Ready to book?</h2>
           <a
             href={BOOKSY_URL}
             target="_blank"
@@ -111,7 +112,7 @@ export default function ServicesPage() {
                 location: "services_page",
               });
             }}
-            className="inline-block bg-white text-[#9A3A4B] font-bold py-3 px-8 rounded hover:bg-slate-100 transition-colors min-h-12 flex items-center justify-center"
+            className={ui.primaryBtn}
           >
             Book on Booksy
           </a>
