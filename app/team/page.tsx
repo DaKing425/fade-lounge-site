@@ -4,7 +4,10 @@
  * Links to individual Booksy booking for each barber
  */
 
+"use client";
+
 import { BOOKSY_URL } from "@/src/lib/site";
+import { trackEvent } from "@/src/lib/analytics";
 
 export default function TeamPage() {
   // Placeholder barber data - will be managed in CMS
@@ -45,6 +48,12 @@ export default function TeamPage() {
             <div
               key={barber.id}
               className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:border-orange-500 transition-colors"
+              onClick={() => {
+                trackEvent("barber_profile_viewed", {
+                  barber_name: barber.name,
+                  barber_id: barber.id,
+                });
+              }}
             >
               {/* Placeholder Photo */}
               <div className="w-full h-64 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
@@ -80,6 +89,12 @@ export default function TeamPage() {
                   href={BOOKSY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackEvent("book_now_click", {
+                      location: "team_page",
+                      barber_name: barber.name,
+                    });
+                  }}
                   className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition-colors min-h-12 flex items-center justify-center"
                 >
                   Book with {barber.name}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { NAV_LINKS, BOOKSY_URL } from "../lib/site";
+import { trackEvent } from "../lib/analytics";
 
 /**
  * Header Component
@@ -50,12 +51,9 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                // GA4 event tracking
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "book_now_click", {
-                    location: "header",
-                  });
-                }
+                trackEvent("book_now_click", {
+                  location: "header",
+                });
               }}
               className="inline-flex items-center justify-center h-12 px-6 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-colors min-w-max"
             >
@@ -114,11 +112,9 @@ export function Header() {
               rel="noopener noreferrer"
               className="block px-3 py-3 mt-4 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-colors text-center min-h-12 flex items-center justify-center"
               onClick={() => {
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "book_now_click", {
-                    location: "mobile_menu",
-                  });
-                }
+                trackEvent("book_now_click", {
+                  location: "mobile_menu",
+                });
               }}
             >
               Book Now

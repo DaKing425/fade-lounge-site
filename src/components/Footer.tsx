@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   PHONE,
@@ -7,6 +9,7 @@ import {
   BUSINESS_NAME,
   HOURS,
 } from "../lib/site";
+import { trackEvent } from "../lib/analytics";
 
 /**
  * Footer Component
@@ -14,6 +17,7 @@ import {
  * - Quick navigation links
  * - Hours of operation
  * - Accessible tap targets (48px+)
+ * - Tracking for call_click and directions_click events
  */
 export function Footer() {
   return (
@@ -30,6 +34,11 @@ export function Footer() {
                   href={GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackEvent("directions_click", {
+                      source: "footer",
+                    });
+                  }}
                   className="text-gray-300 hover:text-orange-500 transition-colors min-h-12 flex items-center text-sm"
                 >
                   {ADDRESS}
@@ -39,6 +48,11 @@ export function Footer() {
                 <p className="text-sm font-semibold text-gray-400">Phone</p>
                 <a
                   href={`tel:${PHONE.replace(/\s/g, "")}`}
+                  onClick={() => {
+                    trackEvent("call_click", {
+                      source: "footer",
+                    });
+                  }}
                   className="text-gray-300 hover:text-orange-500 transition-colors min-h-12 flex items-center font-semibold"
                 >
                   {PHONE}

@@ -7,12 +7,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BOOKSY_URL, PHONE } from "@/src/lib/site";
+import {
+  BOOKSY_URL,
+  PHONE,
+  BOOKSY_EMBED_TIMEOUT,
+  BOOKSY_FALLBACK_ERROR_TEXT,
+} from "@/src/lib/site";
+import { trackEvent } from "@/src/lib/analytics";
 
 export default function BookPage() {
   const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
+    // Track page view event as per PRD requirement
+    trackEvent("book_page_view");
+
     // Show fallback UI after 2.5 seconds if Booksy hasn't loaded
     const timer = setTimeout(() => {
       // Check if Booksy widget has loaded by looking for iframe
@@ -20,7 +29,7 @@ export default function BookPage() {
       if (!booksyFrame) {
         setShowFallback(true);
       }
-    }, 2500);
+    }, BOOKSY_EMBED_TIMEOUT);
 
     return () => clearTimeout(timer);
   }, []);
@@ -54,7 +63,7 @@ export default function BookPage() {
               Having trouble loading?
             </h2>
             <p className="text-yellow-100">
-              Book directly on Booksy or give us a call to schedule your appointment.
+              {BOOKSY_FALLBACK_ERROR_TEXT}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -62,11 +71,9 @@ export default function BookPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
-                    (window as any).gtag("event", "booksy_open", {
-                      source: "fallback_button",
-                    });
-                  }
+                  trackEvent("booksy_open", {
+                    source: "fallback_button",
+                  });
                 }}
                 className="flex-1 inline-flex items-center justify-center h-12 bg-orange-600 text-white font-semibold rounded hover:bg-orange-700 transition-colors"
               >
@@ -75,11 +82,9 @@ export default function BookPage() {
               <a
                 href={`tel:${PHONE.replace(/\s/g, "")}`}
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
-                    (window as any).gtag("event", "call_click", {
-                      source: "fallback_button",
-                    });
-                  }
+                  trackEvent("call_click", {
+                    source: "fallback_button",
+                  });
                 }}
                 className="flex-1 inline-flex items-center justify-center h-12 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition-colors"
               >

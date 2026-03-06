@@ -4,6 +4,11 @@
  * Will be connected to CMS in later phases
  */
 
+"use client";
+
+import { BOOKSY_URL } from "@/src/lib/site";
+import { trackEvent } from "@/src/lib/analytics";
+
 export default function ServicesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -98,9 +103,14 @@ export default function ServicesPage() {
         <div className="bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Ready to book?</h2>
           <a
-            href="https://booksy.com/en-us/1255820_fade-lounge_barber-shop_39418_snohomish"
+            href={BOOKSY_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              trackEvent("book_now_click", {
+                location: "services_page",
+              });
+            }}
             className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded hover:bg-gray-100 transition-colors min-h-12 flex items-center justify-center"
           >
             Book on Booksy

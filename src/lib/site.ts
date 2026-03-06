@@ -64,3 +64,15 @@ export const HOURS = {
   Saturday: "9:00 AM - 5:00 PM",
   Sunday: "Closed",
 };
+
+/**
+ * Booksy embed configuration
+ * Timeout before showing fallback UI (2-3 seconds as per PRD)
+ */
+export const BOOKSY_EMBED_TIMEOUT = 2500; // milliseconds
+
+/**
+ * Fallback UI error message (must match PRD exactly)
+ */
+export const BOOKSY_FALLBACK_ERROR_TEXT =
+  "Having trouble loading? Book directly on Booksy or give us a call.";

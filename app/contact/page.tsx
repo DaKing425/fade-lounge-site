@@ -7,6 +7,7 @@
 "use client";
 
 import { PHONE, ADDRESS, GOOGLE_MAPS_URL, HOURS } from "@/src/lib/site";
+import { trackEvent } from "@/src/lib/analytics";
 
 export default function ContactPage() {
   return (
@@ -26,11 +27,9 @@ export default function ContactPage() {
               <a
                 href={`tel:${PHONE.replace(/\s/g, "")}`}
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
-                    (window as any).gtag("event", "call_click", {
-                      source: "contact_page",
-                    });
-                  }
+                  trackEvent("call_click", {
+                    source: "contact_page",
+                  });
                 }}
                 className="inline-block text-2xl font-bold text-white hover:text-orange-500 transition-colors min-h-12 flex items-center"
               >
@@ -50,11 +49,9 @@ export default function ContactPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  if (typeof window !== "undefined" && (window as any).gtag) {
-                    (window as any).gtag("event", "directions_click", {
-                      source: "contact_page",
-                    });
-                  }
+                  trackEvent("directions_click", {
+                    source: "contact_page",
+                  });
                 }}
                 className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded transition-colors min-h-12 flex items-center justify-center"
               >

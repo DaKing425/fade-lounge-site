@@ -8,6 +8,8 @@
 "use client";
 
 import { useState } from "react";
+import { BOOKSY_URL } from "@/src/lib/site";
+import { trackEvent } from "@/src/lib/analytics";
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -55,7 +57,12 @@ export default function GalleryPage() {
           {filters.map((filter) => (
             <button
               key={filter.value || "all"}
-              onClick={() => setActiveFilter(filter.value)}
+              onClick={() => {
+                setActiveFilter(filter.value);
+                trackEvent("gallery_filter_used", {
+                  filter: filter.value || "all",
+                });
+              }}
               className={`px-4 py-2 rounded font-semibold transition-colors min-h-12 flex items-center ${
                 activeFilter === filter.value
                   ? "bg-orange-500 text-white"
@@ -108,9 +115,14 @@ export default function GalleryPage() {
             Ready to get your cut?
           </h2>
           <a
-            href="https://booksy.com/en-us/1255820_fade-lounge_barber-shop_39418_snohomish"
+            href={BOOKSY_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              trackEvent("book_now_click", {
+                location: "gallery_page",
+              });
+            }}
             className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded transition-colors min-h-12 flex items-center justify-center"
           >
             Book Now
