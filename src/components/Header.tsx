@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS, BOOKSY_URL } from "../lib/site";
 import { trackEvent } from "../lib/analytics";
 
@@ -17,38 +18,50 @@ import { trackEvent } from "../lib/analytics";
  */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href="/"
-            className="flex-shrink-0 flex items-center gap-2 font-bold text-xl md:text-2xl text-[#3C4973] hover:text-[#9A3A4B] transition-colors"
+            className="flex-shrink-0 flex items-center gap-3 font-bold text-xl text-[#3C4973] hover:text-[#9A3A4B] transition-colors"
           >
             <Image
               src="/logo.png"
               alt="Fade Lounge"
-              width={40}
-              height={40}
-              className="h-10 w-auto"
+              width={44}
+              height={44}
+              className="h-11 w-auto"
               priority
             />
-            <span>Fade Lounge</span>
+            <span className="hidden sm:inline">Fade Lounge</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <nav className="hidden md:flex items-center space-x-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#3C4973] transition-colors"
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive(link.href)
+                    ? "text-[#9A3A4B] font-semibold"
+                    : "text-slate-700 hover:text-[#3C4973]"
+                }`}
               >
                 {link.label}
               </Link>
@@ -66,7 +79,7 @@ export function Header() {
                   location: "header",
                 });
               }}
-              className="inline-flex items-center justify-center h-12 px-6 bg-[#9A3A4B] text-white font-semibold rounded hover:bg-[#7d2e3c] transition-colors min-w-max"
+              className="inline-flex items-center justify-center h-11 px-7 bg-[#9A3A4B] text-white font-semibold rounded-lg hover:bg-[#7d2e3c] transition-colors duration-200 text-sm"
             >
               Book Now
             </a>
@@ -75,7 +88,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden inline-flex items-center justify-center h-12 w-12 rounded hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#3C4973]"
+            className="md:hidden inline-flex items-center justify-center h-11 w-11 rounded hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#3C4973]"
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
           >
@@ -111,7 +124,11 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-[#3C4973] transition-colors min-h-12 flex items-center"
+                className={`block px-4 py-3 text-base font-medium rounded-md transition-colors min-h-11 flex items-center ${
+                  isActive(link.href)
+                    ? "text-white bg-[#9A3A4B] font-semibold"
+                    : "text-slate-700 hover:text-[#3C4973]"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -121,7 +138,7 @@ export function Header() {
               href={BOOKSY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-3 py-3 mt-4 bg-[#9A3A4B] text-white font-semibold rounded hover:bg-[#7d2e3c] transition-colors text-center min-h-12 flex items-center justify-center"
+              className="block px-4 py-3 mt-4 bg-[#9A3A4B] text-white font-semibold rounded-lg hover:bg-[#7d2e3c] transition-colors duration-200 text-center min-h-11 flex items-center justify-center"
               onClick={() => {
                 trackEvent("book_now_click", {
                   location: "mobile_menu",
