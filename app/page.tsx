@@ -1,7 +1,6 @@
 "use client";
 
 import { REVIEW_RATING, REVIEW_COUNT, BOOKSY_URL } from "@/src/lib/site";
-import { trackEvent } from "@/src/lib/analytics";
 
 export default function Home() {
   return (
@@ -28,9 +27,11 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
-                    trackEvent("book_now_click", {
-                      location: "hero",
-                    });
+                    if (typeof window !== "undefined" && (window as any).gtag) {
+                      (window as any).gtag("event", "book_now_click", {
+                        location: "hero",
+                      });
+                    }
                   }}
                   className="inline-flex items-center justify-center h-12 px-8 bg-orange-500 text-white font-bold rounded hover:bg-orange-600 transition-colors"
                 >
