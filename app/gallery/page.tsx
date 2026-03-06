@@ -46,8 +46,8 @@ export default function GalleryPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="space-y-8">
         <div>
-          <h1 className="text-4xl font-bold text-white mb-4">Gallery</h1>
-          <p className="text-gray-400 text-lg">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Gallery</h1>
+          <p className="text-slate-600 text-lg">
             See our work - real cuts from real Fade Lounge clients
           </p>
         </div>
@@ -65,8 +65,8 @@ export default function GalleryPage() {
               }}
               className={`px-4 py-2 rounded font-semibold transition-colors min-h-12 flex items-center ${
                 activeFilter === filter.value
-                  ? "bg-orange-500 text-white"
-                  : "bg-slate-800 text-gray-300 hover:text-white border border-slate-700"
+                  ? "bg-[#9A3A4B] text-white"
+                  : "bg-white text-slate-700 hover:text-slate-900 border border-slate-200"
               }`}
             >
               {filter.label}
@@ -79,13 +79,13 @@ export default function GalleryPage() {
           {filteredGalleries.map((item) => (
             <div
               key={item.id}
-              className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:border-orange-500 transition-all cursor-pointer group"
+              className="bg-white rounded-lg overflow-hidden border border-slate-200 hover:border-[#3C4973] transition-all cursor-pointer group shadow-sm"
             >
               {/* Placeholder Image */}
-              <div className="w-full h-64 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center group-hover:from-slate-600 group-hover:to-slate-800 transition-colors relative">
+              <div className="w-full h-64 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center group-hover:from-slate-300 group-hover:to-slate-400 transition-colors relative">
                 <div className="text-center">
-                  <div className="text-6xl text-slate-600 mb-2">📷</div>
-                  <p className="text-slate-500 text-sm">{item.category}</p>
+                  <div className="text-6xl text-slate-500 mb-2">📷</div>
+                  <p className="text-slate-600 text-sm">{item.category}</p>
                 </div>
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -95,8 +95,8 @@ export default function GalleryPage() {
 
               {/* Caption */}
               <div className="p-4">
-                <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                <p className="text-sm text-orange-500">{item.category}</p>
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="text-sm text-[#9A3A4B]">{item.category}</p>
               </div>
             </div>
           ))}
@@ -105,13 +105,13 @@ export default function GalleryPage() {
         {/* Empty State */}
         {filteredGalleries.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">No images found in this category</p>
+            <p className="text-slate-600 text-lg">No images found in this category</p>
           </div>
         )}
 
         {/* CTA Section */}
-        <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
+        <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Ready to get your cut?
           </h2>
           <a
@@ -123,7 +123,7 @@ export default function GalleryPage() {
                 location: "gallery_page",
               });
             }}
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded transition-colors min-h-12 flex items-center justify-center"
+            className="inline-block bg-[#9A3A4B] hover:bg-[#7d2e3c] text-white font-semibold py-3 px-8 rounded transition-colors min-h-12 flex items-center justify-center"
           >
             Book Now
           </a>

@@ -9,31 +9,31 @@ export default function LegalPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="space-y-12">
         <div>
-          <h1 className="text-4xl font-bold text-white mb-4">Legal</h1>
-          <p className="text-gray-400">Privacy Policy, Terms, and Policies</p>
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Legal</h1>
+          <p className="text-slate-600">Privacy Policy, Terms, and Policies</p>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 border-b border-slate-700">
-          <button className="px-4 py-2 border-b-2 border-orange-500 text-orange-500 font-semibold">
+        <div className="flex flex-wrap gap-2 border-b border-slate-200">
+          <button className="px-4 py-2 border-b-2 border-[#3C4973] text-[#3C4973] font-semibold">
             Privacy Policy
           </button>
-          <button className="px-4 py-2 border-b-2 border-transparent text-gray-400 hover:text-white font-semibold">
+          <button className="px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold">
             Terms of Service
           </button>
-          <button className="px-4 py-2 border-b-2 border-transparent text-gray-400 hover:text-white font-semibold">
+          <button className="px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold">
             Cancellation Policy
           </button>
         </div>
 
         {/* Privacy Policy Section */}
-        <div className="prose prose-invert max-w-none space-y-6">
+        <div className="prose max-w-none space-y-6">
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Privacy Policy</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Privacy Policy</h2>
 
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-slate-700">
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   1. Information We Collect
                 </h3>
                 <p>
@@ -45,7 +45,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   2. How We Use Your Information
                 </h3>
                 <p>
@@ -56,7 +56,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   3. Booking and Payment Information
                 </h3>
                 <p>
@@ -67,7 +67,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   4. Security
                 </h3>
                 <p>
@@ -78,7 +78,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   5. Contact Us
                 </h3>
                 <p>
@@ -90,14 +90,14 @@ export default function LegalPage() {
             </div>
           </section>
 
-          <div className="border-t border-slate-700"></div>
+          <div className="border-t border-slate-200"></div>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Terms of Service</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Terms of Service</h2>
 
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-slate-700">
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Appointment Booking
                 </h3>
                 <p>
@@ -108,7 +108,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Cancellations & Rescheduling
                 </h3>
                 <p>
@@ -118,7 +118,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Code of Conduct
                 </h3>
                 <p>
@@ -129,7 +129,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Limitation of Liability
                 </h3>
                 <p>
@@ -141,16 +141,16 @@ export default function LegalPage() {
             </div>
           </section>
 
-          <div className="border-t border-slate-700"></div>
+          <div className="border-t border-slate-200"></div>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
               Cancellation Policy
             </h2>
 
-            <div className="space-y-4 text-gray-300">
-              <div className="bg-slate-800 border border-slate-700 rounded-lg p-4">
-                <h3 className="text-lg font-bold text-orange-500 mb-2">
+            <div className="space-y-4 text-slate-700">
+              <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-4">
+                <h3 className="text-lg font-bold text-[#3C4973] mb-2">
                   24-Hour Cancellation Policy
                 </h3>
                 <p className="mb-2">
@@ -161,7 +161,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Late Arrivals
                 </h3>
                 <p>
@@ -172,7 +172,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Rescheduling
                 </h3>
                 <p>
@@ -182,7 +182,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   No-Shows
                 </h3>
                 <p>
@@ -193,7 +193,7 @@ export default function LegalPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Exceptions
                 </h3>
                 <p>
@@ -205,13 +205,13 @@ export default function LegalPage() {
             </div>
           </section>
 
-          <div className="border-t border-slate-700"></div>
+          <div className="border-t border-slate-200"></div>
 
           <section>
-            <p className="text-gray-400 text-sm">
+            <p className="text-slate-600 text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-slate-600 text-sm">
               These policies are subject to change at any time. Please review
               regularly for updates.
             </p>
@@ -219,14 +219,14 @@ export default function LegalPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
-          <h2 className="text-xl font-bold text-white mb-4">Questions?</h2>
-          <p className="text-gray-400 mb-4">
+        <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-8 text-center">
+          <h2 className="text-xl font-bold text-slate-900 mb-4">Questions?</h2>
+          <p className="text-slate-600 mb-4">
             Contact us at (425) 244-7901 or visit us in person
           </p>
           <a
             href="/contact"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded transition-colors min-h-12 flex items-center justify-center"
+            className="inline-block bg-[#9A3A4B] hover:bg-[#7d2e3c] text-white font-semibold py-2 px-6 rounded transition-colors min-h-12 flex items-center justify-center"
           >
             Contact Us
           </a>

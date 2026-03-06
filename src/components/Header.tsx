@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { NAV_LINKS, BOOKSY_URL } from "../lib/site";
 import { trackEvent } from "../lib/analytics";
@@ -8,9 +9,11 @@ import { trackEvent } from "../lib/analytics";
 /**
  * Header Component
  * - Sticky header with navigation links
+ * - Logo with brand colors (blue/red)
  * - Persistent "Book Now" CTA
  * - Mobile menu toggle
- * - Dark theme with accessible tap targets (48px+)
+ * - Clean white background with subtle border
+ * - Accessible tap targets (48px+)
  */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,15 +23,23 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-900 text-white shadow-md">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href="/"
-            className="flex-shrink-0 font-bold text-xl md:text-2xl text-orange-500"
+            className="flex-shrink-0 flex items-center gap-2 font-bold text-xl md:text-2xl text-[#3C4973] hover:text-[#9A3A4B] transition-colors"
           >
-            Fade Lounge
+            <Image
+              src="/logo.png"
+              alt="Fade Lounge"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
+            <span>Fade Lounge</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,7 +48,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium hover:text-orange-500 transition-colors"
+                className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#3C4973] transition-colors"
               >
                 {link.label}
               </Link>
@@ -55,7 +66,7 @@ export function Header() {
                   location: "header",
                 });
               }}
-              className="inline-flex items-center justify-center h-12 px-6 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-colors min-w-max"
+              className="inline-flex items-center justify-center h-12 px-6 bg-[#9A3A4B] text-white font-semibold rounded hover:bg-[#7d2e3c] transition-colors min-w-max"
             >
               Book Now
             </a>
@@ -64,12 +75,12 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden inline-flex items-center justify-center h-12 w-12 rounded hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="md:hidden inline-flex items-center justify-center h-12 w-12 rounded hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#3C4973]"
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
           >
             <svg
-              className="h-6 w-6"
+              className="h-6 w-6 text-slate-900"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -100,7 +111,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-3 text-base font-medium hover:text-orange-500 transition-colors min-h-12 flex items-center"
+                className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-[#3C4973] transition-colors min-h-12 flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -110,7 +121,7 @@ export function Header() {
               href={BOOKSY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-3 py-3 mt-4 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-colors text-center min-h-12 flex items-center justify-center"
+              className="block px-3 py-3 mt-4 bg-[#9A3A4B] text-white font-semibold rounded hover:bg-[#7d2e3c] transition-colors text-center min-h-12 flex items-center justify-center"
               onClick={() => {
                 trackEvent("book_now_click", {
                   location: "mobile_menu",

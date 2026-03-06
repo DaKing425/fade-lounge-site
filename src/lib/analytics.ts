@@ -23,7 +23,8 @@ export function trackEvent(
 ): void {
   // Placeholder implementation for Phase 1
   // In Phase 2, this will integrate with real GA4
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", name, payload || {});
+  const w = window as unknown as Record<string, unknown>;
+  if (typeof window !== "undefined" && w.gtag) {
+    (w.gtag as (event: string, name: string, config: Record<string, unknown>) => void)("event", name, payload || {});
   }
 }

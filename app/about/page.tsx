@@ -11,58 +11,58 @@ export default function AboutPage() {
       <div className="space-y-12">
         {/* Hero Section */}
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-white">About Fade Lounge</h1>
-          <p className="text-xl text-gray-300">
+          <h1 className="text-4xl font-bold text-slate-900">About Fade Lounge</h1>
+          <p className="text-xl text-slate-700">
             Your trusted barber in Snohomish, WA
           </p>
         </div>
 
         {/* Story Section */}
-        <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 space-y-4">
-          <h2 className="text-2xl font-bold text-white">Our Story</h2>
-          <p className="text-gray-300 leading-relaxed">
+        <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-8 space-y-4">
+          <h2 className="text-2xl font-bold text-slate-900">Our Story</h2>
+          <p className="text-slate-700 leading-relaxed">
             Fade Lounge was founded with a simple mission: to bring premium
             barbershop services to Snohomish, WA. We believe that a great
-            haircut is more than just a service—it's a confidence boost and a
+            haircut is more than just a service&mdash;it&apos;s a confidence boost and a
             ritual of self-care.
           </p>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-slate-700 leading-relaxed">
             Our team of experienced barbers is dedicated to delivering precision
             cuts, clean line work, and a welcoming atmosphere for every client.
-            Whether you're a longtime regular or visiting for the first time, we
+            Whether you&apos;re a longtime regular or visiting for the first time, we
             treat every guest with the respect and attention they deserve.
           </p>
         </div>
 
         {/* Values Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 space-y-3">
-            <h3 className="text-lg font-bold text-orange-500">Precision</h3>
-            <p className="text-gray-300">
+          <div className="bg-white border border-slate-200 rounded-lg p-6 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-[#3C4973]">Precision</h3>
+            <p className="text-slate-700">
               Every cut is executed with meticulous attention to detail using
               professional-grade techniques and premium tools.
             </p>
           </div>
 
-          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 space-y-3">
-            <h3 className="text-lg font-bold text-orange-500">Cleanliness</h3>
-            <p className="text-gray-300">
+          <div className="bg-white border border-slate-200 rounded-lg p-6 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-[#3C4973]">Cleanliness</h3>
+            <p className="text-slate-700">
               We maintain the highest standards of hygiene and sanitation,
               ensuring a safe and professional environment.
             </p>
           </div>
 
-          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 space-y-3">
-            <h3 className="text-lg font-bold text-orange-500">Community</h3>
-            <p className="text-gray-300">
-              We're proud to serve the Snohomish community and build lasting
+          <div className="bg-white border border-slate-200 rounded-lg p-6 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-[#3C4973]">Community</h3>
+            <p className="text-slate-700">
+              We&apos;re proud to serve the Snohomish community and build lasting
               relationships with our clients.
             </p>
           </div>
 
-          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 space-y-3">
-            <h3 className="text-lg font-bold text-orange-500">Excellence</h3>
-            <p className="text-gray-300">
+          <div className="bg-white border border-slate-200 rounded-lg p-6 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-[#3C4973]">Excellence</h3>
+            <p className="text-slate-700">
               We continuously improve our craft and stay updated on the latest
               trends and techniques in barbering.
             </p>
@@ -70,41 +70,41 @@ export default function AboutPage() {
         </div>
 
         {/* Trust Section */}
-        <div className="bg-gradient-to-r from-orange-900/30 to-slate-900 border border-orange-700 rounded-lg p-8 space-y-4">
-          <h2 className="text-2xl font-bold text-white">Why Trust Fade Lounge?</h2>
+        <div className="bg-gradient-to-r from-[#9A3A4B]/10 to-[#3C4973]/10 border border-slate-200 rounded-lg p-8 space-y-4">
+          <h2 className="text-2xl font-bold text-slate-900">Why Trust Fade Lounge?</h2>
           <ul className="space-y-3">
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold text-lg">★</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold text-lg">★</span>
               <div>
-                <p className="font-semibold text-white">Highly Rated</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-slate-900">Highly Rated</p>
+                <p className="text-slate-600 text-sm">
                   4.9 stars on Booksy from 180+ real customer reviews
                 </p>
               </div>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold text-lg">★</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold text-lg">★</span>
               <div>
-                <p className="font-semibold text-white">Expert Barbers</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-slate-900">Expert Barbers</p>
+                <p className="text-slate-600 text-sm">
                   Years of professional experience and ongoing training
                 </p>
               </div>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold text-lg">★</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold text-lg">★</span>
               <div>
-                <p className="font-semibold text-white">Premium Quality</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-slate-900">Premium Quality</p>
+                <p className="text-slate-600 text-sm">
                   High-quality tools, products, and techniques
                 </p>
               </div>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold text-lg">★</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold text-lg">★</span>
               <div>
-                <p className="font-semibold text-white">Local Pride</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-slate-900">Local Pride</p>
+                <p className="text-slate-600 text-sm">
                   Proud members of the Snohomish community
                 </p>
               </div>
@@ -114,34 +114,34 @@ export default function AboutPage() {
 
         {/* FAQ Section */}
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold text-white">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Frequently Asked Questions</h2>
 
-          <div className="bg-slate-800 rounded-lg p-6 border border-slate-700 space-y-3">
-            <h3 className="text-lg font-bold text-white">
+          <div className="bg-white rounded-lg p-6 border border-slate-200 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900">
               What are your hours?
             </h3>
-            <p className="text-gray-400">
-              We're open Monday-Friday 9 AM - 7 PM, Saturday 9 AM - 5 PM, and
+            <p className="text-slate-600">
+              We&apos;re open Monday-Friday 9 AM - 7 PM, Saturday 9 AM - 5 PM, and
               closed on Sundays. Check our contact page for more details.
             </p>
           </div>
 
-          <div className="bg-slate-800 rounded-lg p-6 border border-slate-700 space-y-3">
-            <h3 className="text-lg font-bold text-white">
+          <div className="bg-white rounded-lg p-6 border border-slate-200 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900">
               Do you take walk-ins?
             </h3>
-            <p className="text-gray-400">
+            <p className="text-slate-600">
               Yes! Walk-ins are welcome based on availability. However, we
               recommend booking online via Booksy for faster service and to
               guarantee your spot.
             </p>
           </div>
 
-          <div className="bg-slate-800 rounded-lg p-6 border border-slate-700 space-y-3">
-            <h3 className="text-lg font-bold text-white">
+          <div className="bg-white rounded-lg p-6 border border-slate-200 space-y-3 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900">
               How experienced are the barbers?
             </h3>
-            <p className="text-gray-400">
+            <p className="text-slate-600">
               All of our barbers have years of professional barbering
               experience. Check out our Team page to learn more about each one.
             </p>
@@ -149,16 +149,16 @@ export default function AboutPage() {
         </div>
 
         {/* CTA */}
-        <div className="bg-orange-600 rounded-lg p-8 text-center space-y-4">
+        <div className="bg-gradient-to-r from-[#9A3A4B] to-[#7d2e3c] rounded-lg p-8 text-center space-y-4">
           <h2 className="text-2xl font-bold text-white">Visit Fade Lounge Today</h2>
-          <p className="text-orange-100">
+          <p className="text-red-100">
             Experience the difference of a premium Snohomish barber
           </p>
           <a
             href="https://booksy.com/en-us/1255820_fade-lounge_barber-shop_39418_snohomish"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded hover:bg-gray-100 transition-colors min-h-12 flex items-center justify-center"
+            className="inline-block bg-white text-[#9A3A4B] font-bold py-3 px-8 rounded hover:bg-slate-100 transition-colors min-h-12 flex items-center justify-center"
           >
             Book Your Appointment
           </a>

@@ -36,8 +36,8 @@ export default function TeamPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="space-y-12">
         <div>
-          <h1 className="text-4xl font-bold text-white mb-4">Our Barbers</h1>
-          <p className="text-gray-400 text-lg">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Our Barbers</h1>
+          <p className="text-slate-600 text-lg">
             Meet the talented team behind Fade Lounge
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function TeamPage() {
           {barbers.map((barber) => (
             <div
               key={barber.id}
-              className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:border-orange-500 transition-colors"
+              className="bg-white rounded-lg overflow-hidden border border-slate-200 hover:border-[#3C4973] transition-colors shadow-sm"
               onClick={() => {
                 trackEvent("barber_profile_viewed", {
                   barber_name: barber.name,
@@ -56,27 +56,27 @@ export default function TeamPage() {
               }}
             >
               {/* Placeholder Photo */}
-              <div className="w-full h-64 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
-                <div className="text-6xl text-slate-600">
+              <div className="w-full h-64 bg-gradient-to-br from-[#3C4973] to-[#9A3A4B] flex items-center justify-center">
+                <div className="text-6xl text-white">
                   {barber.name.charAt(0)}
                 </div>
               </div>
 
               {/* Barber Info */}
               <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-white">{barber.name}</h3>
-                <p className="text-gray-400 text-sm">{barber.bio}</p>
+                <h3 className="text-2xl font-bold text-slate-900">{barber.name}</h3>
+                <p className="text-slate-600 text-sm">{barber.bio}</p>
 
                 {/* Specialties */}
                 <div>
-                  <p className="text-sm font-semibold text-gray-300 mb-2">
+                  <p className="text-sm font-semibold text-slate-700 mb-2">
                     Specialties
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {barber.specialties.map((specialty, idx) => (
                       <span
                         key={idx}
-                        className="bg-slate-700 text-orange-400 text-xs px-3 py-1 rounded"
+                        className="bg-[#F8FAFC] text-[#3C4973] text-xs px-3 py-1 rounded"
                       >
                         {specialty}
                       </span>
@@ -95,7 +95,7 @@ export default function TeamPage() {
                       barber_name: barber.name,
                     });
                   }}
-                  className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition-colors min-h-12 flex items-center justify-center"
+                  className="block w-full text-center bg-[#9A3A4B] hover:bg-[#7d2e3c] text-white font-semibold py-3 rounded transition-colors min-h-12 flex items-center justify-center"
                 >
                   Book with {barber.name}
                 </a>
@@ -105,29 +105,29 @@ export default function TeamPage() {
         </div>
 
         {/* Team Culture Section - Placeholder */}
-        <div className="bg-slate-800 border border-slate-700 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-white mb-4">
+        <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-8">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Why Choose Fade Lounge?
           </h2>
-          <ul className="space-y-3 text-gray-300">
+          <ul className="space-y-3 text-slate-700">
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold">✓</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold">✓</span>
               <span>Expert barbers with years of experience</span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold">✓</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold">✓</span>
               <span>Professional, clean, and welcoming atmosphere</span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold">✓</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold">✓</span>
               <span>Premium products and techniques</span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold">✓</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold">✓</span>
               <span>Easy online booking via Booksy</span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-500 mr-3 font-bold">✓</span>
+              <span className="text-[#9A3A4B] mr-3 font-bold">✓</span>
               <span>Trusted by locals - 4.9 rating on Booksy</span>
             </li>
           </ul>
